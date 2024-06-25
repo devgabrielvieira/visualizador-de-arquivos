@@ -10,6 +10,7 @@ file = st.file_uploader(
 )
 
 if file:
+
     if file.type == 'text/plain':
         st.text(file.read().decode())
     elif file.type == 'application/json':    
@@ -22,7 +23,7 @@ if file:
         st.line_chart(df.set_index('mês'))
         st.bar_chart(df.set_index('mês'))
     elif file.type == 'text/x-python':
-        st.code(file.read().decode(), linguage='python')
+        st.code(file.read().decode(), language='python')
     elif file.type == 'audio/mpeg':
         st.audio(file)  
     elif file.type == 'video/mp4':
